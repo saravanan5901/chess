@@ -14,7 +14,9 @@ class PromotionOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(primary: Colors.green),
+      style: ElevatedButton.styleFrom(
+        primary: const Color(0xff00584f),
+      ),
       child: Image(
         image: AssetImage(
           'assets/images/pieces/${formatPieceTheme(appModel.pieceTheme)}' +

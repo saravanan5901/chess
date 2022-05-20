@@ -16,6 +16,7 @@ class RoundedAlertButton extends StatelessWidget {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
+            backgroundColor: const Color(0xff00584f),
             title: Text(
               label,
               style: const TextStyle(

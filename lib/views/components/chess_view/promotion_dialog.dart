@@ -18,10 +18,11 @@ class PromotionDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: Colors.green,
+      backgroundColor: const Color(0xff00584f),
       actions: [
         SizedBox(
-          height: 66,
+          height: 30,
+          width: double.maxFinite,
           child: Row(
             children: promotions
                 .map(
