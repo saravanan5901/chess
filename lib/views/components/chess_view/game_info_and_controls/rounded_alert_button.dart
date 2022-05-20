@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../../shared/rounded_button.dart';
 
@@ -12,34 +12,31 @@ class RoundedAlertButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RoundedButton(label, onPressed: () {
-      showCupertinoDialog(
+      showDialog(
         context: context,
         builder: (BuildContext context) {
-          return CupertinoAlertDialog(
+          return AlertDialog(
             title: Text(
               label,
               style: const TextStyle(
                 fontSize: 16,
-                fontFamily: 'Jura',
-                color: CupertinoColors.black,
+                color: Colors.black,
               ),
             ),
             content: Text(
               'Are you sure you want to ${label.toLowerCase()}?',
               style: const TextStyle(
                 fontSize: 16,
-                fontFamily: 'Jura',
-                color: CupertinoColors.black,
+                color: Colors.black,
               ),
             ),
             actions: [
-              CupertinoButton(
+              TextButton(
                 child: Text(
                   label,
                   style: const TextStyle(
                     fontSize: 16,
-                    fontFamily: 'Jura',
-                    color: CupertinoColors.destructiveRed,
+                    color: Colors.red,
                   ),
                 ),
                 onPressed: () {
@@ -47,13 +44,12 @@ class RoundedAlertButton extends StatelessWidget {
                   Navigator.pop(context);
                 },
               ),
-              CupertinoButton(
+              TextButton(
                 child: const Text(
                   'Cancel',
                   style: TextStyle(
                     fontSize: 16,
-                    fontFamily: 'Jura',
-                    color: CupertinoColors.activeBlue,
+                    color: Colors.blue,
                   ),
                 ),
                 onPressed: () {

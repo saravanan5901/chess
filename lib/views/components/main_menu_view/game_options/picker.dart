@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:material_segmented_control/material_segmented_control.dart';
 
 class Picker<T> extends StatelessWidget {
   final String label;
@@ -18,22 +19,17 @@ class Picker<T> extends StatelessWidget {
         const SizedBox(height: 10),
         SizedBox(
           width: double.infinity,
-          child: CupertinoTheme(
-            data: const CupertinoThemeData(
-              textTheme: CupertinoTextThemeData(
-                textStyle: TextStyle(fontFamily: 'Jura', fontSize: 8),
-              ),
-            ),
-            child: CupertinoSlidingSegmentedControl<T>(
-              children: options,
-              groupValue: selection,
-              onValueChanged: (T val) {
-                setFunc(val);
-              },
-              thumbColor: const Color(0x88FFFFFF),
-              backgroundColor: const Color(0x20000000),
-            ),
+          child: MaterialSegmentedControl<T>(
+            children: options,
+            selectionIndex: selection,
+            onSegmentChosen: (T val) {
+              setFunc(val);
+            },
+            selectedColor: const Color(0x60000000),
+            unselectedColor: const Color(0x20000000),
+            borderColor: const Color(0x20000000),
           ),
+          // ),
         )
       ],
     );

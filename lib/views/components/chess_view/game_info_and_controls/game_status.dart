@@ -1,5 +1,5 @@
 import 'package:chess/model/app_model.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class GameStatus extends StatelessWidget {
@@ -11,15 +11,12 @@ class GameStatus extends StatelessWidget {
       builder: (context, appModel, child) => Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(_getStatus(appModel),
-              style: const TextStyle(
-                fontSize: 24,
-              )),
-          !appModel.gameOver && appModel.isAIsTurn
-              ? const CupertinoActivityIndicator(
-                  radius: 12,
-                )
-              : Container()
+          Text(
+            _getStatus(appModel),
+            style: const TextStyle(
+              fontSize: 24,
+            ),
+          ),
         ],
       ),
     );

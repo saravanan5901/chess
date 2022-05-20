@@ -1,5 +1,5 @@
 import 'package:chess/model/app_model.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import 'game_options/ai_difficulty_picker.dart';
 import 'game_options/side_picker.dart';

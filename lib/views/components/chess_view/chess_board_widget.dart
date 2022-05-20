@@ -1,6 +1,6 @@
 import 'package:chess/model/app_model.dart';
 import 'package:flame/game.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class ChessBoardWidget extends StatelessWidget {
   final AppModel appModel;

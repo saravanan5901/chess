@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RoundedButton extends StatelessWidget {
@@ -13,10 +12,14 @@ class RoundedButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: 60,
-      child: CupertinoButton(
-        padding: EdgeInsets.zero,
-        color: const Color(0x20000000),
-        borderRadius: const BorderRadius.all(Radius.circular(15)),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          padding: EdgeInsets.zero,
+          primary: const Color(0x20000000),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(15)),
+          ),
+        ),
         onPressed: onPressed,
         child: Text(
           label,

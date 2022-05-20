@@ -2,7 +2,7 @@ import 'package:chess/logic/chess_piece.dart';
 import 'package:chess/logic/shared_functions.dart';
 import 'package:chess/model/app_model.dart';
 import 'package:chess/views/components/main_menu_view/game_options/side_picker.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class PromotionOption extends StatelessWidget {
   final AppModel appModel;
@@ -13,7 +13,8 @@ class PromotionOption extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoButton(
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(primary: Colors.green),
       child: Image(
         image: AssetImage(
           'assets/images/pieces/${formatPieceTheme(appModel.pieceTheme)}' +

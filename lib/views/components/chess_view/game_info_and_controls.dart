@@ -1,5 +1,5 @@
 import 'package:chess/model/app_model.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import 'game_info_and_controls/restart_exit_buttons.dart';
 

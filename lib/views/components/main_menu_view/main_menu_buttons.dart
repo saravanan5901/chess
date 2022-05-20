@@ -1,6 +1,6 @@
 import 'package:chess/model/app_model.dart';
 import 'package:chess/views/components/shared/rounded_button.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../../chess_view.dart';
 
@@ -18,7 +18,7 @@ class MainMenuButtons extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            CupertinoPageRoute(
+            MaterialPageRoute(
               builder: (context) {
                 appModel.newGame(context, notify: false);
                 return ChessView(appModel);

@@ -1,13 +1,25 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import 'picker.dart';
 
 class AIDifficultyPicker extends StatelessWidget {
   final Map<int, Text> difficultyOptions = {
-    1: const Text('1'),
-    2: const Text('2'),
-    3: const Text('3'),
-    4: const Text('4'),
+    1: const Text(
+      '1',
+      style: TextStyle(color: Colors.black),
+    ),
+    2: const Text(
+      '2',
+      style: TextStyle(color: Colors.black),
+    ),
+    3: const Text(
+      '3',
+      style: TextStyle(color: Colors.black),
+    ),
+    4: const Text(
+      '4',
+      style: TextStyle(color: Colors.black),
+    ),
   };
 
   final int aiDifficulty;

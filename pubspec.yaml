@@ -27,13 +27,9 @@ dependencies:
   provider: ^5.0.0
   flame: 1.0.0-releasecandidate.11
   url_launcher: ^6.0.2
+  material_segmented_control: ^4.0.0
   shared_preferences:
   async:
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -46,10 +42,10 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-  fonts:
-    - family: Jura
-      fonts:
-        - asset: assets/font/Jura-VariableFont_wght.ttf
+  # fonts:
+    # - family: Jura
+    #   fonts:
+    #     - asset: assets/font/Jura-VariableFont_wght.ttf
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

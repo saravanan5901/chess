@@ -8,7 +8,7 @@ import 'package:chess/model/app_model.dart';
 import 'package:chess/views/components/main_menu_view/game_options/side_picker.dart';
 import 'package:flame/game.dart';
 import 'package:flame/gestures.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
 import 'chess_board.dart';

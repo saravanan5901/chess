@@ -1,7 +1,7 @@
 import 'package:chess/logic/chess_piece.dart';
 import 'package:chess/model/app_model.dart';
 import 'package:chess/views/components/chess_view/promotion_option.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 const promotions = [
   ChessPieceType.queen,
@@ -17,9 +17,10 @@ class PromotionDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoAlertDialog(
+    return AlertDialog(
+      backgroundColor: Colors.green,
       actions: [
-        Container(
+        SizedBox(
           height: 66,
           child: Row(
             children: promotions
