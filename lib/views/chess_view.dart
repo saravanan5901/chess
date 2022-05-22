@@ -36,7 +36,16 @@ class _ChessViewState extends State<ChessView> {
           return WillPopScope(
             onWillPop: _willPopCallback,
             child: Container(
-              decoration: BoxDecoration(gradient: appModel.theme.background),
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color(0xFFC9B28F),
+                    Color(0xFF69493b),
+                  ],
+                ),
+              ),
               padding: const EdgeInsets.all(30),
               child: Column(
                 children: [

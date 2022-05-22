@@ -25,7 +25,7 @@ class Picker<T> extends StatelessWidget {
             onSegmentChosen: (T val) {
               setFunc(val);
             },
-            selectedColor: const Color(0x40000000),
+            selectedColor: const Color(0xFF69493b),
             unselectedColor: const Color(0x20000000),
             borderColor: const Color(0x20000000),
           ),

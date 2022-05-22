@@ -5,40 +5,20 @@ import 'package:chess/logic/move_calculation/move_classes/move_meta.dart';
 import 'package:chess/logic/shared_functions.dart';
 import 'package:chess/views/components/main_menu_view/game_options/side_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-
-import 'app_themes.dart';
 
 class AppModel extends ChangeNotifier {
   int aiDifficulty = 1;
   Player selectedSide = Player.player1;
   Player playerSide = Player.player1;
-  int timeLimit = 0;
-  String pieceTheme = 'Classic';
-  String themeName = 'Green';
-  bool flip = true;
+  // bool flip = true;
 
   ChessGame game;
   bool gameOver = false;
   bool stalemate = false;
   bool promotionRequested = false;
-  bool moveListUpdated = false;
+  // bool moveListUpdated = false;
   Player turn = Player.player1;
   List<MoveMeta> moveMetaList = [];
-
-  AppTheme get theme {
-    return themeList[themeIndex];
-  }
-
-  int get themeIndex {
-    var themeIndex = 0;
-    themeList.asMap().forEach((index, theme) {
-      if (theme.name == themeName) {
-        themeIndex = index;
-      }
-    });
-    return themeIndex;
-  }
 
   Player get aiTurn {
     return oppositePlayer(playerSide);
@@ -48,9 +28,9 @@ class AppModel extends ChangeNotifier {
     return turn == aiTurn;
   }
 
-  AppModel() {
-    loadSharedPrefs();
-  }
+  // AppModel() {
+  //   loadSharedPrefs();
+  // }
 
   void newGame(BuildContext context, {bool notify = true}) {
     if (game != null) {
@@ -77,23 +57,18 @@ class AppModel extends ChangeNotifier {
 
   void pushMoveMeta(MoveMeta meta) {
     moveMetaList.add(meta);
-    moveListUpdated = true;
+    // moveListUpdated = true;
     notifyListeners();
   }
 
   void popMoveMeta() {
     moveMetaList.removeLast();
-    moveListUpdated = true;
+    // moveListUpdated = true;
     notifyListeners();
   }
 
   void endGame() {
     gameOver = true;
-    notifyListeners();
-  }
-
-  void undoEndGame() {
-    gameOver = false;
     notifyListeners();
   }
 
@@ -120,27 +95,20 @@ class AppModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setTheme(int index) async {
-    themeName = themeList[index].name;
-    final prefs = await SharedPreferences.getInstance();
-    prefs.setString('themeName', themeName);
-    notifyListeners();
-  }
+  // void setFlipBoard(bool flip) async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   this.flip = flip;
+  //   prefs.setBool('flip', flip);
+  //   notifyListeners();
+  // }
 
-  void setFlipBoard(bool flip) async {
-    final prefs = await SharedPreferences.getInstance();
-    this.flip = flip;
-    prefs.setBool('flip', flip);
-    notifyListeners();
-  }
-
-  void loadSharedPrefs() async {
-    final prefs = await SharedPreferences.getInstance();
-    themeName = prefs.getString('themeName') ?? 'Green';
-    pieceTheme = prefs.getString('pieceTheme') ?? 'Classic';
-    flip = prefs.getBool('flip') ?? true;
-    notifyListeners();
-  }
+  // void loadSharedPrefs() async {
+  //   final prefs = await SharedPreferences.getInstance();
+  //   themeName = prefs.getString('themeName') ?? 'Green';
+  //   pieceTheme = prefs.getString('pieceTheme') ?? 'Classic';
+  //   flip = prefs.getBool('flip') ?? true;
+  //   notifyListeners();
+  // }
 
   void update() {
     notifyListeners();

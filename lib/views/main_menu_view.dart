@@ -2,8 +2,9 @@ import 'package:chess/model/app_model.dart';
 import 'package:chess/views/components/main_menu_view/game_options.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:chess/views/components/shared/rounded_button.dart';
 
-import 'components/main_menu_view/main_menu_buttons.dart';
+import 'package:chess/views/chess_view.dart';
 
 class MainMenuView extends StatefulWidget {
   const MainMenuView({Key key}) : super(key: key);
@@ -19,7 +20,16 @@ class _MainMenuViewState extends State<MainMenuView> {
       body: Consumer<AppModel>(
         builder: (context, appModel, child) {
           return Container(
-            decoration: BoxDecoration(gradient: appModel.theme.background),
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color(0xFFC9B28F),
+                  Color(0xFF69493b),
+                ],
+              ),
+            ),
             padding: const EdgeInsets.all(30),
             child: Column(
               children: [
@@ -35,7 +45,7 @@ class _MainMenuViewState extends State<MainMenuView> {
                 ),
                 const Image(
                   image: AssetImage(
-                    'assets/images/logo.jpg',
+                    'images/logo.jpg',
                   ),
                   height: 200,
                   width: double.maxFinite,
@@ -47,7 +57,23 @@ class _MainMenuViewState extends State<MainMenuView> {
                 const SizedBox(
                   height: 10,
                 ),
-                MainMenuButtons(appModel),
+                SizedBox(
+                  width: double.infinity,
+                  child: RoundedButton(
+                    'Start',
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            appModel.newGame(context, notify: false);
+                            return ChessView(appModel);
+                          },
+                        ),
+                      );
+                    },
+                  ),
+                ),
               ],
             ),
           );

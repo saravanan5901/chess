@@ -16,7 +16,7 @@ class RoundedAlertButton extends StatelessWidget {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            backgroundColor: const Color(0xff00584f),
+            backgroundColor: const Color(0xFF69493b),
             title: Text(
               label,
               style: const TextStyle(
@@ -37,7 +37,7 @@ class RoundedAlertButton extends StatelessWidget {
                   label,
                   style: const TextStyle(
                     fontSize: 16,
-                    color: Colors.red,
+                    color: Colors.black,
                   ),
                 ),
                 onPressed: () {
@@ -50,7 +50,7 @@ class RoundedAlertButton extends StatelessWidget {
                   'Cancel',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.blue,
+                    color: Colors.black,
                   ),
                 ),
                 onPressed: () {

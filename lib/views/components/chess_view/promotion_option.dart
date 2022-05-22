@@ -15,11 +15,11 @@ class PromotionOption extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        primary: const Color(0xff00584f),
+        primary: const Color(0xFF69493b),
       ),
       child: Image(
         image: AssetImage(
-          'assets/images/pieces/${formatPieceTheme(appModel.pieceTheme)}' +
+          'assets/images/pieces/classic' +
               '/${pieceTypeToString(promotionType)}_${_playerColor()}.png',
         ),
       ),

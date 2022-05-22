@@ -4,8 +4,6 @@ import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'logic/shared_functions.dart';
-
 void main() {
   runApp(
     ChangeNotifierProvider(
@@ -20,8 +18,7 @@ void _loadFlameAssets() async {
   List<String> pieceImages = [];
   for (var color in ['black', 'white']) {
     for (var piece in ['king', 'queen', 'rook', 'bishop', 'knight', 'pawn']) {
-      pieceImages
-          .add('pieces/${formatPieceTheme('Classic')}/${piece}_$color.png');
+      pieceImages.add('pieces/classic/${piece}_$color.png');
     }
   }
   await Flame.images.loadAll(pieceImages);

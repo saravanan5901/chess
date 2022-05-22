@@ -11,23 +11,21 @@ int tileToCol(int tile) {
 }
 
 double getXFromTile(int tile, double tileSize, AppModel appModel) {
-  return appModel.flip && appModel.playerSide == Player.player2
+  // return appModel.flip && appModel.playerSide == Player.player2
+  return appModel.playerSide == Player.player2
       ? (7 - tileToCol(tile)) * tileSize
       : tileToCol(tile) * tileSize;
 }
 
 double getYFromTile(int tile, double tileSize, AppModel appModel) {
-  return appModel.flip && appModel.playerSide == Player.player2
+  // return appModel.flip && appModel.playerSide == Player.player2
+  return appModel.playerSide == Player.player2
       ? (7 - tileToRow(tile)) * tileSize
       : tileToRow(tile) * tileSize;
 }
 
 Player oppositePlayer(Player player) {
   return player == Player.player1 ? Player.player2 : Player.player1;
-}
-
-String formatPieceTheme(String themeString) {
-  return themeString.toLowerCase().replaceAll(' ', '');
 }
 
 String pieceTypeToString(ChessPieceType type) {

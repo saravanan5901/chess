@@ -83,11 +83,4 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
-    - assets/images/logo.jpg
     - assets/images/pieces/classic/
-    - assets/images/pieces/letters/
-    - assets/images/pieces/angular/
-    - assets/images/pieces/8-bit/
-    - assets/images/pieces/videochess/
-    - assets/images/pieces/lewischessmen/
-    - assets/images/pieces/mexicocity/

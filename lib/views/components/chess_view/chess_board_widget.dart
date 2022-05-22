@@ -10,25 +10,21 @@ class ChessBoardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: appModel.theme.name != 'Video Chess'
-          ? BoxDecoration(
-              border: Border.all(
-                color: appModel.theme.border,
-                width: 4,
-              ),
-              borderRadius: BorderRadius.circular(14),
-              boxShadow: const [
-                BoxShadow(
-                  blurRadius: 10,
-                  color: Color(0x88000000),
-                ),
-              ],
-            )
-          : const BoxDecoration(),
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: const Color(0xffffffff),
+          width: 4,
+        ),
+        borderRadius: BorderRadius.circular(14),
+        boxShadow: const [
+          BoxShadow(
+            blurRadius: 10,
+            color: Color(0x88000000),
+          ),
+        ],
+      ),
       child: ClipRRect(
-        borderRadius: appModel.theme.name != 'Video Chess'
-            ? BorderRadius.circular(10)
-            : BorderRadius.zero,
+        borderRadius: BorderRadius.circular(10),
         child: SizedBox(
           width: MediaQuery.of(context).size.width - 68,
           height: MediaQuery.of(context).size.width - 68,

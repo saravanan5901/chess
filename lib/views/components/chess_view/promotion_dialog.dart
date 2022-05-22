@@ -18,7 +18,7 @@ class PromotionDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      backgroundColor: const Color(0xff00584f),
+      backgroundColor: const Color(0xFF69493b),
       actions: [
         SizedBox(
           height: 30,

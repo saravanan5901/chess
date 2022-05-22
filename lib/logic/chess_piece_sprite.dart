@@ -9,7 +9,6 @@ import 'shared_functions.dart';
 
 class ChessPieceSprite {
   ChessPieceType type;
-  String pieceTheme;
   int tile;
   Sprite sprite;
   double spriteX;
@@ -17,7 +16,7 @@ class ChessPieceSprite {
   double offsetX = 0;
   double offsetY = 0;
 
-  ChessPieceSprite(ChessPiece piece, this.pieceTheme) {
+  ChessPieceSprite(ChessPiece piece) {
     tile = piece.tile;
     type = piece.type;
     initSprite(piece);
@@ -61,8 +60,8 @@ class ChessPieceSprite {
     if (piece.type == ChessPieceType.promotion) {
       pieceName = 'pawn';
     }
-    sprite = Sprite(await Flame.images.load(
-        'pieces/${formatPieceTheme(pieceTheme)}/${pieceName}_$color.png'));
+    sprite = Sprite(
+        await Flame.images.load('pieces/classic/${pieceName}_$color.png'));
   }
 
   void initSpritePosition(double tileSize, AppModel appModel) {
