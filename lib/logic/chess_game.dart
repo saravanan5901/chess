@@ -159,7 +159,6 @@ class ChessGame extends Game with TapDetector {
   void _moveCompletion(
     MoveMeta meta, {
     bool clearRedo = true,
-    // bool undoing = false,
     bool changeTurn = true,
     bool updateMetaList = true,
   }) {
@@ -196,7 +195,6 @@ class ChessGame extends Game with TapDetector {
   }
 
   int _vector2ToTile(Vector2 vector2) {
-    // if (appModel.flip && appModel.playerSide == Player.player2) {
     if (appModel.playerSide == Player.player2) {
       return (7 - (vector2.y / tileSize).floor()) * 8 +
           (7 - (vector2.x / tileSize).floor());

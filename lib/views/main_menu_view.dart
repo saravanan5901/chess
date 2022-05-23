@@ -45,7 +45,7 @@ class _MainMenuViewState extends State<MainMenuView> {
                 ),
                 const Image(
                   image: AssetImage(
-                    'images/logo.jpg',
+                    'assets/images/logo.jpg',
                   ),
                   height: 200,
                   width: double.maxFinite,

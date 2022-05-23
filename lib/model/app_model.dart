@@ -28,10 +28,6 @@ class AppModel extends ChangeNotifier {
     return turn == aiTurn;
   }
 
-  // AppModel() {
-  //   loadSharedPrefs();
-  // }
-
   void newGame(BuildContext context, {bool notify = true}) {
     if (game != null) {
       game.cancelAIMove();
@@ -57,13 +53,11 @@ class AppModel extends ChangeNotifier {
 
   void pushMoveMeta(MoveMeta meta) {
     moveMetaList.add(meta);
-    // moveListUpdated = true;
     notifyListeners();
   }
 
   void popMoveMeta() {
     moveMetaList.removeLast();
-    // moveListUpdated = true;
     notifyListeners();
   }
 
@@ -94,21 +88,6 @@ class AppModel extends ChangeNotifier {
     }
     notifyListeners();
   }
-
-  // void setFlipBoard(bool flip) async {
-  //   final prefs = await SharedPreferences.getInstance();
-  //   this.flip = flip;
-  //   prefs.setBool('flip', flip);
-  //   notifyListeners();
-  // }
-
-  // void loadSharedPrefs() async {
-  //   final prefs = await SharedPreferences.getInstance();
-  //   themeName = prefs.getString('themeName') ?? 'Green';
-  //   pieceTheme = prefs.getString('pieceTheme') ?? 'Classic';
-  //   flip = prefs.getBool('flip') ?? true;
-  //   notifyListeners();
-  // }
 
   void update() {
     notifyListeners();
